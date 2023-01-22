@@ -1,0 +1,63 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.29514467922225945 0.45646087127100365 -0.8393646950672311 1.3127803773640856
+  position -0.5742300741322676 1.2597157878732559 1.0023722060809739
+}
+TexturedBackground {
+  texture "empty_office"
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 1.5 1.5
+  floorAppearance PBRAppearance {
+    roughness 1
+    roughnessMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/textures/parquetry/chequered_parquetry_roughness.jpg"
+      ]
+    }
+    metalness 0
+    normalMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/textures/parquetry/chequered_parquetry_normal.jpg"
+      ]
+    }
+    occlusionMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/textures/parquetry/chequered_parquetry_occlusion.jpg"
+      ]
+    }
+  }
+}
+E-puck {
+  hidden position_0_0 7.948642935698904
+  hidden position_0_1 8.733313933250942
+  hidden rotation_1 0 -1 0 4.61772767866027
+  hidden rotation_2 0 -1 0 3.8330566811082307
+  translation 0.190232 0.128983 -0.000102799
+  rotation -0.0004389239544264123 -0.00012249998728079464 -0.9999998961697522 -2.891235307179586
+  controller "controller_liner"
+  groundSensorsSlot [
+    DistanceSensor {
+      translation 8.98042e-08 0.02 0.01
+      rotation 0 1 0 1.57
+      name "right_sensor"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 8.98042e-08 -0.02 0.01
+      rotation 0 1 0 1.57
+      name "left_sensor"
+      type "infra-red"
+    }
+  ]
+}

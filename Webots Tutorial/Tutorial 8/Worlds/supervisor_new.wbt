@@ -1,0 +1,75 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  info [
+    "Example use of a Supervisor to manipulate the world."
+  ]
+  title "Supervisor Programming"
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.99011495530141 0.03382005675518796 -0.13611972322027002 4.987295880803141
+  position -0.3836315705220701 2.128133957392975 0.2518813319276499
+}
+TexturedBackground {
+}
+PointLight {
+  attenuation 0 0 4
+  intensity 3
+  location 1 1 0.5
+}
+RectangleArena {
+  floorSize 3 3
+}
+DEF Jerry Robot {
+  translation 0.21000000000000002 0.25 -0.43
+  children [
+    Solid {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+            }
+            texture ImageTexture {
+              url [
+                "/home/koyal/Desktop/Webots_world/jerry.png"
+              ]
+            }
+          }
+          geometry Cylinder {
+            height 0.4
+            radius 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "slave"
+  controller "supervisor_cpp"
+  supervisor TRUE
+}
+DEF Tom Robot {
+  translation -0.29 0.25 -0.43
+  children [
+    Solid {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+            }
+            texture ImageTexture {
+              url [
+                "/home/koyal/Desktop/Webots_world/clip-art-tom-and-jerry-476770.jpg"
+              ]
+            }
+          }
+          geometry Box {
+            size 0.5 0.5 0.5
+          }
+        }
+      ]
+    }
+  ]
+  name "Master"
+  controller "supervisor_cpp"
+  supervisor TRUE
+}

@@ -1,0 +1,49 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2133341357939687 0.5258668024540083 0.8233788026065751 0.9155986975957484
+  position -1.510072284467399 -1.4710473221196345 1.2425080687795103
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+WoodenBox {
+  translation 0.213864 -0.248317 0.05
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.183039 -0.211232 0.05
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.240124 0.238701 0.05
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+E-puck {
+  hidden position_0_0 10.298211510408661
+  hidden position_0_1 11.170913656500687
+  hidden linearVelocity_0 0.05385635064756116 0.015901213452187715 -1.7985435376520818e-08
+  hidden angularVelocity_0 0.0013457236695082694 -0.004568542191583363 0.09376081638009293
+  hidden rotation_1 0 -1 0 2.2681591039505116
+  hidden linearVelocity_1 0.05149540991160217 0.015204254426616411 -7.735545575562692e-09
+  hidden angularVelocity_1 -0.7569821569394584 2.563649373548783 0.09548765037222882
+  hidden rotation_2 0 -1 0 1.3954569578584857
+  hidden linearVelocity_2 0.05617167052562965 0.01658468356831193 7.626174072392246e-09
+  hidden angularVelocity_2 -0.8324290987707943 2.8195840428839074 0.09575728992268565
+  translation 0.19866817061157668 0.029141667598973436 -6.431595755067125e-05
+  rotation 0.0004292126441941264 -0.00022374295890892194 0.9999998828577904 0.288874967388626
+  controller "front_command"
+}

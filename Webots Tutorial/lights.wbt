@@ -1,0 +1,49 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.18283274947398906 0.501233467147222 0.8457760916054297 0.8143697686525069
+  position -2.1670235113597824 -2.1032868928511665 1.3175668593538046
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+E-puck {
+  hidden position_0_0 16.155113859967287
+  hidden position_0_1 17.74669300999248
+  hidden linearVelocity_0 0.047927495775772586 0.029728018945855392 8.935577954703384e-09
+  hidden angularVelocity_0 0.0024536589176673883 -0.00396311573039981 0.08981800077522044
+  hidden rotation_1 0 1 0 3.588743245608114
+  hidden linearVelocity_1 0.045923684296992374 0.02848506054241744 3.3040388777061807e-09
+  hidden angularVelocity_1 -1.4184662210323844 2.286758420803684 0.09155401915344243
+  hidden rotation_2 0 1 0 5.180322395633308
+  hidden linearVelocity_2 0.049891790271800886 0.030946565026078406 -2.6722770843616225e-09
+  hidden angularVelocity_2 -1.5530517664466386 2.5039131617448946 0.0918267498141067
+  translation 0.320061996717053 0.09154234927359409 -6.431917549098304e-05
+  rotation 0.00021989814073095272 -1.527591152871525e-05 0.9999999757057269 0.5568337661601058
+}
+WoodenBox {
+  translation 0.571582 0 0.05
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.173293 -0.442684 0.05
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.376513 0.214486 0.05
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+Floor {
+  size 1.5 1.5
+}

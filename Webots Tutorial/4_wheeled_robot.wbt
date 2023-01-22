@@ -1,0 +1,288 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.16529790460896346 -0.789843399427882 -0.5906132466446155 5.602091975351203
+  position -1.257164059707397 -0.008043846483539563 0.6388657349405898
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+WoodenBox {
+  translation -0.082572 -0.481847 0.11
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.196964 -0.298731 0.1
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0 0 0.11
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+E-puck {
+  translation -0.56749177873313 -0.5239080565481198 -6.430051007197228e-05
+  rotation -0.00017212217852036058 -7.305421318505593e-05 0.9999999825185187 -1.360656440451379
+  controller "epuck_avoid_collision"
+}
+Floor {
+  size 1.5 1.5
+}
+DEF Ball Solid {
+  translation 0.335274 0.532012 0.136633
+  rotation -0.9975900669034096 -0.05300381696294935 -0.044773360416760756 -0.1745492624864058
+  children [
+    DEF ball Shape {
+      appearance PBRAppearance {
+        baseColor 0.333333 0.666667 1
+        roughness 1
+        metalness 0
+      }
+      geometry Sphere {
+        radius 0.12
+        subdivision 2
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE ball
+  physics Physics {
+  }
+}
+DEF wall Solid {
+  translation 0 0.74 0.02
+  children [
+    DEF wall Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 1.5 0.1 0.05
+      }
+    }
+  ]
+  name "solid(2)"
+}
+Solid {
+  translation 0 -0.7 0.02
+  children [
+    USE wall
+  ]
+}
+Solid {
+  translation 0.75 -5.2007e-15 0.019994
+  rotation 2.6644099999812388e-06 -2.6427199999813914e-06 0.9999999999929585 -1.5707953071795862
+  children [
+    USE wall
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation -0.71 -2.60789e-06 0.02
+  rotation 0 0 1 1.5708
+  children [
+    USE wall
+  ]
+  name "solid(4)"
+}
+DEF Mechanism Solid {
+  translation -0.51 -0.18 0.17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../../../../Downloads/red_brick_wall.jpg"
+          ]
+        }
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+}
+Solid {
+  translation 0.207049 0.227256 0.0299999
+  rotation 0.12942794234801672 -0.983105562088492 -0.12942898257433916 1.5708
+  children [
+    DEF G0 Group {
+      children [
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.01
+          }
+        }
+        Transform {
+          translation 0 0 -0.05
+          children [
+            DEF Globe Shape {
+              appearance PBRAppearance {
+              }
+              geometry Sphere {
+                radius 0.04
+                subdivision 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 0.05
+          children [
+            USE Globe
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(6)"
+  boundingObject USE G0
+  physics Physics {
+    density 2
+  }
+}
+Robot {
+  translation -0.26 0.41 0.05
+  rotation 0.9999999999972473 0 -2.346409999993541e-06 1.5708
+  children [
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 0.333333 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.05 0.2
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        rotation 1 0 0 0
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF Physics_wh Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        rotation 1 0 0 0
+        children [
+          USE Wheel
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics USE Physics_wh
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        rotation 1 0 0 0
+        children [
+          USE Wheel
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics USE Physics_wh
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        rotation 1 0 0 0
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE Physics_wh
+      }
+    }
+    DistanceSensor {
+      translation 0.02 0 0.1
+      rotation 0 1 0 -1.27
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.333333 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation -0.02 0 0.1
+      rotation 0 1 0 -1.87
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.333333 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+}
